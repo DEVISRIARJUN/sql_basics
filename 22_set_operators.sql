@@ -1,6 +1,5 @@
 -- SET OPERATORS
 
-use aravind;
 create table s4 (sid int,sname varchar(15),branch varchar(12));
 create table s5 (roll_no int,sname varchar(12),marks int);
 insert into s4 values(1,'A','CSE');

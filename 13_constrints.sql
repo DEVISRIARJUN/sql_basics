@@ -9,6 +9,8 @@ USE db1;
 -- DEPARTMENT TABLE
 -- ============================================
 
+# Unique,Not null,Default,Check,Primary key,Foreign Key
+
 CREATE TABLE department (
     Department_ID INT PRIMARY KEY,
     Department_Name VARCHAR(50) NOT NULL,

@@ -77,3 +77,20 @@ FROM students;
 SELECT *,
        NTH_VALUE(Marks, 2) OVER () AS n1
 FROM students;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

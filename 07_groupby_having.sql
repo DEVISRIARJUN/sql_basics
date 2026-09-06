@@ -72,7 +72,7 @@ GROUP BY Branch;
 -- ECE    | 1
 
 
--- Q6. Average marks by branch.
+-- Q6. Average marks by branch in desc order.
 
 SELECT Branch, AVG(Marks) AS average_marks
 FROM students

@@ -9,10 +9,8 @@ USE db1;
 
 SELECT *
 FROM (
-    SELECT *,
-           DENSE_RANK() OVER (
-               ORDER BY Marks DESC
-           ) AS dr1
+    SELECT *,DENSE_RANK() 
+    OVER (ORDER BY Marks DESC) AS dr1
     FROM students
 ) AS t
 WHERE dr1 = 3;
@@ -30,10 +28,8 @@ WHERE dr1 = 3;
 
 SELECT *
 FROM (
-    SELECT *,
-           ROW_NUMBER() OVER (
-               PARTITION BY Location
-           ) AS rn2
+    SELECT *,ROW_NUMBER() 
+    OVER (PARTITION BY Location) AS rn2
     FROM students
 ) AS t2
 WHERE rn2 = 1;
