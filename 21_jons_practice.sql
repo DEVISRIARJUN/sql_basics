@@ -143,13 +143,10 @@ INNER JOIN Department
 -- 4. INNER JOIN - SELECTED COLUMNS
 -- ============================================================
 
-SELECT
-    Ename,
-    deptno,
-    Dname
+SELECT Ename,deptno,Dname
 FROM Employee
 INNER JOIN Department
-    ON Department.Did = Employee.deptno;
+ON Department.Did = Employee.deptno;
 
 -- OUTPUT:
 -- Ename | deptno | Dname
@@ -170,11 +167,7 @@ INNER JOIN Department
 -- 5. INNER JOIN - SALARY + DEPARTMENT + LOCATION
 -- ============================================================
 
-SELECT
-    Ename,
-    sal,
-    Dname,
-    loc
+SELECT Ename,sal,Dname,loc
 FROM Employee
 INNER JOIN Department
     ON Department.Did = Employee.deptno;
@@ -199,9 +192,7 @@ INNER JOIN Department
 -- Employees earning more than 1000
 -- ============================================================
 
-SELECT
-    Ename,
-    Dname
+SELECT Ename,Dname
 FROM Employee
 INNER JOIN Department
     ON Department.Did = Employee.deptno
@@ -229,11 +220,7 @@ WHERE sal > 1000;
 -- Your original query had 208.
 -- That should be 2018.
 
-SELECT
-    Ename,
-    DOJ,
-    sal,
-    Dname
+SELECT Ename,DOJ,sal,Dname
 FROM Employee
 INNER JOIN Department
     ON Department.Did = Employee.deptno
@@ -258,11 +245,7 @@ WHERE YEAR(DOJ) IN (2018, 2019, 2020);
 -- Sorted by marks descending
 -- ============================================================
 
-SELECT
-    Ename,
-    branch,
-    marks,
-    Dname
+SELECT Ename,branch,marks,Dname
 FROM Employee
 INNER JOIN Department
     ON Department.Did = Employee.deptno
@@ -293,9 +276,7 @@ ORDER BY marks DESC;
 -- whose salary is greater than 1000
 -- ============================================================
 
-SELECT
-    Dname,
-    COUNT(*) AS No_of_emp
+SELECT Dname,COUNT(*) AS No_of_emp
 FROM Employee
 INNER JOIN Department
     ON Employee.deptno = Department.Did
@@ -376,12 +357,15 @@ ORDER BY sal DESC;
 --
 -- e.MGRid = m.Eid
 
-SELECT
-    e.*,
-    m.*
+SELECT e.*,m.*
 FROM Employee e, Employee m
 WHERE e.MGRid = m.Eid;
 
+--       (or)
+        
+select * from employee as e
+inner join employee as m
+e.manager_id = m.emp_id;
 -- OUTPUT:
 -- Employee | Manager
 -- -------------------
